@@ -1,0 +1,47 @@
+COMMAND EXECUTED: ifconfig
+
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.88.131  netmask 255.255.255.0  broadcast 192.168.88.255
+        inet6 fe80::20c:29ff:fe68:84ea  prefixlen 64
+        ether 00:0c:29:68:84:ea
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128
+
+--------------------------------------------------
+
+COMMAND EXECUTED: nmap 192.168.88.131
+
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-04-27 18:36 +0530
+Nmap scan report for 192.168.88.131
+Host is up.
+All 1000 scanned ports on 192.168.88.131 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+
+Nmap done: 1 IP address (1 host up) scanned in 201.86 seconds
+
+--------------------------------------------------
+
+COMMAND EXECUTED: nmap -sV 192.168.88.131
+
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-04-27 18:43 +0530
+Nmap scan report for 192.168.88.131
+Host is up.
+All 1000 scanned ports on 192.168.88.131 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+
+Service detection performed.
+Nmap done: 1 IP address (1 host up) scanned in 202.01 seconds
+
+--------------------------------------------------
+
+COMMAND EXECUTED: nmap -F 192.168.88.131
+
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-04-27 18:46 +0530
+Nmap scan report for 192.168.88.131
+Host is up.
+All 100 scanned ports on 192.168.88.131 are in ignored states.
+Not shown: 100 filtered tcp ports (no-response)
+
+Nmap done: 1 IP address (1 host up) scanned in 21.61 seconds
