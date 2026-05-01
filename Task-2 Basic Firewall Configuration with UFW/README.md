@@ -231,6 +231,7 @@ UFW automatically updates both IPv4 and IPv6 rules for better compatibility.
 
 ### Screenshot References
 ![Allow SSH Rule](Screenshots/sudo\ ufw\ allow\ ssh.png)
+
 ![Configuration Result](Screenshots/ufw_configuration_output.png)
 
 ### SSH Port Details
