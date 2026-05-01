@@ -10,6 +10,11 @@ The objective of this task is to capture and analyze network traffic using Wires
 
 This hands-on exercise teaches fundamental network analysis skills essential for cybersecurity professionals, network administrators, and developers.
 
+## Next Steps
+- Use the packet filters to isolate suspicious traffic patterns.
+- Identify whether sensitive data is transmitted in plaintext.
+- Apply remediation to encrypt or block insecure network protocols.
+
 ---
 
 # Tool Used
@@ -770,6 +775,163 @@ tshark -r capture.pcap -Y "http"
 # Export to CSV
 tshark -r capture.pcap -T fields -e ip.src -e ip.dst -e http.request.method > output.csv
 ```
+
+---
+
+# Security Impact Assessment & Implications
+
+## Key Security Findings from Wireshark Analysis
+
+### 1. Unencrypted HTTP Traffic is a Major Risk ⚠️
+
+**What We Observed:**
+- HTTP requests and responses visible in plain text
+- Credentials, session cookies, and form fields exposed
+- Full user actions readable by any network eavesdropper
+
+**Implications:**
+- Attacker on same network can steal passwords
+- Session hijacking becomes trivial
+- Sensitive data is exposed during transit
+- Users are vulnerable on public Wi-Fi
+
+**Example Exposure:**
+```
+GET /login HTTP/1.1
+Host: example.com
+Content-Type: application/x-www-form-urlencoded
+username=admin&password=SecurePass123
+```
+
+**Remediation:**
+- Enforce HTTPS on all web pages
+- Redirect HTTP → HTTPS at the server level
+- Deploy HSTS to force secure connections
+
+---
+
+### 2. DNS Queries in Clear Text Leak User Behavior 🌐
+
+**What We Observed:**
+- DNS requests visible for every visited domain
+- Attacker learns every site the user requests
+- DNS responses reveal destination IP addresses
+
+**Implications:**
+- Privacy breach: browsing activity exposed
+- Enables targeted phishing / MITM attacks
+- Can identify services and cloud providers in use
+
+**Remediation:**
+- Use DNS over HTTPS (DoH) or DNS over TLS (DoT)
+- Avoid open/public DNS resolvers when possible
+- Deploy internal DNS filtering with encryption
+
+---
+
+### 3. ARP Spoofing / MITM Indicators 🔍
+
+**What We Observed:**
+- Multiple ARP replies for the same IP with different MACs
+- Duplicate ARP announcements in capture
+
+**Implications:**
+- Possible ARP spoofing attack in the network
+- Attacker can intercept traffic and alter packets
+- Confidentiality and integrity are compromised
+
+**Remediation:**
+- Enable Dynamic ARP Inspection (DAI) on switches
+- Use static ARP entries for critical hosts
+- Deploy port security on network switches
+- Use encrypted protocols (HTTPS, SSH, VPN)
+
+---
+
+### 4. Port Scanning and Reconnaissance Detection 🔎
+
+**What We Observed:**
+- Rapid SYN packets to multiple ports
+- Repeated RST responses or no replies
+
+**Implications:**
+- Host is being scanned by an attacker
+- Attacker is mapping services for exploitation
+- Indicates reconnaissance activity in the network
+
+**Remediation:**
+- Filter unwanted ports using firewall rules
+- Use IDS/IPS to detect scanning behavior
+- Log and investigate suspicious source IPs
+- Implement network segmentation
+
+---
+
+### 5. Missing Security Headers on HTTP Responses 📌
+
+**What We Observed:**
+- Application does not send security headers
+- Exposes users to XSS, clickjacking, MIME sniffing
+
+**Implications:**
+- Browser security protections disabled
+- Attack surface increases for web application attacks
+- Higher risk of client-side exploitation
+
+**Remediation:**
+- Add `Content-Security-Policy`
+- Add `X-Frame-Options: DENY`
+- Add `X-Content-Type-Options: nosniff`
+- Add `Referrer-Policy: strict-origin-when-cross-origin`
+- Add `Permissions-Policy` and `Strict-Transport-Security`
+
+---
+
+## Remediation Checklist
+
+### Network Traffic Protections
+- [ ] Enforce HTTPS for all web traffic
+- [ ] Redirect HTTP to HTTPS at the server
+- [ ] Deploy HSTS with `max-age=31536000`
+- [ ] Use secure DNS (DoH/DoT)
+- [ ] Monitor ARP traffic for spoofing
+- [ ] Use VPN on untrusted networks
+
+### Host and Application Hardening
+- [ ] Disable unnecessary protocols and ports
+- [ ] Harden web server with security headers
+- [ ] Block directory browsing and information leaks
+- [ ] Limit capture of sensitive data in requests
+- [ ] Apply patching to network and web servers
+
+### Monitoring and Detection
+- [ ] Enable IDS/IPS for network reconnaissance
+- [ ] Log suspicious TCP/UDP scan patterns
+- [ ] Alert on duplicate ARP responses
+- [ ] Review DNS query logs for abnormal domains
+- [ ] Use packet capture sparingly for forensic analysis
+
+---
+
+## Recommended Follow-Up Actions
+
+### Immediate
+- ✅ Switch all sensitive services to HTTPS
+- ✅ Disable HTTP-only applications
+- ✅ Configure DNS security
+- ✅ Review Wireshark capture for ARP anomalies
+
+### Short-Term
+- 🔧 Deploy a secure web server configuration
+- 🔧 Implement firewall/ACL rules for port control
+- 🔧 Add security headers to web application responses
+- 🔧 Start monitoring network for scans and spoofing
+
+### Long-Term
+- 📅 Schedule periodic packet capture reviews
+- 📅 Use network segmentation and least privilege
+- 📅 Train staff on secure network practices
+- 📅 Develop incident response for network attacks
 
 ---
 

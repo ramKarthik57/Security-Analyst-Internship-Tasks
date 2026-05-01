@@ -14,6 +14,24 @@ The project encompasses 8 distinct tasks that cover essential areas of cybersecu
 
 All tasks are designed to be hands-on, with detailed documentation, scripts, screenshots, and analysis reports. This portfolio showcases the ability to identify vulnerabilities, implement security controls, and communicate complex security concepts effectively.
 
+## Task Summary & Quick Navigation
+
+| # | Task | Topic | Key Tools | Deliverables | Status |
+|---|------|-------|-----------|--------------|--------|
+| 1 | [Basic Network Scanning with Nmap](Task-1%20Basic%20Network%20Scanning%20with%20Nmap/) | Network reconnaissance, port discovery | Nmap | Scan results, reports | ✅ Complete |
+| 2 | [Basic Firewall Configuration with UFW](Task-2%20Basic%20Firewall%20Configuration%20with%20UFW/) | Linux firewall, access control, rules | UFW | Configuration script, rules | ✅ Complete |
+| 3 | [SQL Injection on DVWA (Low Security)](Task-3%20SQL%20Injection%20on%20DVWA%20(Low%20Security)/) | Web security, exploit techniques | DVWA, Apache, MySQL | Exploit scripts, analysis | ✅ Complete |
+| 4 | [Network Security Threats Research](Task-4%20%20Research%20Report%20on%20Common%20Network%20Security%20Threats/) | DoS, MITM, Spoofing analysis | N/A | Comprehensive report | ✅ Complete |
+| 5 | [Social Engineering Attacks Research](Task-5%20Research%20Report%20on%20Social%20Engineering%20Attacks/) | Phishing, pretexting, human factors | N/A | Detailed report | ✅ Complete |
+| 6 | [Patch Management Research](Task-6%20Research%20Report%20on%20the%20Importance%20of%20Patch%20Management/) | Vulnerability management, best practices | N/A | Best practices guide | ✅ Complete |
+| 7 | [Vulnerability Scanning with Nikto](Task-7%20Vulnerability%20Scanning%20with%20Nikto/) | Web server assessment, misconfigurations | Nikto | Scan results, reports | ✅ Complete |
+| 8 | [Network Traffic Analysis with Wireshark](Task-8%20Capture%20Network%20Traffic%20with%20Wireshark/) | Packet capture, protocol analysis | Wireshark | PCAP files, analysis | ✅ Complete |
+
+## Quick Action Checklist
+- Review the task summary table and open the task README for any item to inspect findings.
+- Confirm that each task includes analysis, implications, and remediation steps.
+- Use screenshots and deliverables to validate the results for each task.
+
 ## Project Structure
 
 ```
