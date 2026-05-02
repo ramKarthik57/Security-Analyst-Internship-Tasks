@@ -10,6 +10,9 @@ The objective of this task is to capture and analyze network traffic using Wires
 
 This hands-on exercise teaches fundamental network analysis skills essential for cybersecurity professionals, network administrators, and developers.
 
+## Video Demonstration
+Watch the complete walkthrough: [Task-8 Video](https://drive.google.com/file/d/1TlQ4xRIcyU42TxSdFiCP6oDozGgQJW_l/view?usp=sharing)
+
 ## Next Steps
 - Use the packet filters to isolate suspicious traffic patterns.
 - Identify whether sensitive data is transmitted in plaintext.

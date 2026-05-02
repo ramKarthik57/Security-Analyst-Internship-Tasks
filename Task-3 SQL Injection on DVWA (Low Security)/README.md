@@ -11,6 +11,9 @@ The objective of this task is to demonstrate an SQL Injection vulnerability usin
 
 This exercise teaches critical web security concepts that apply to real-world application security testing.
 
+## Video Demonstration
+Watch the complete walkthrough: [Task-3 Video](https://drive.google.com/file/d/1pBzaThfTLTyG7EPxVm9WpiodqEjv4fmU/view?usp=sharing)
+
 ## Next Steps
 - Compare vulnerable code patterns with secure prepared statement examples.
 - Apply the remediation checklist to eliminate unsafe query construction.

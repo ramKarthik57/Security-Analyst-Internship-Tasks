@@ -9,6 +9,9 @@ The objective of this task is to configure a basic firewall using UFW (Uncomplic
 
 This exercise teaches critical security concepts for protecting Linux systems.
 
+## Video Demonstration
+Watch the complete walkthrough: [Task-2 Video](https://drive.google.com/file/d/1hzK8msNQ_r7Lbm3sZdlD60702YuxyTa0/view?usp=sharing)
+
 ## Next Steps
 - Confirm firewall rules before and after enabling UFW.
 - Test administrative access to avoid self-lockout.

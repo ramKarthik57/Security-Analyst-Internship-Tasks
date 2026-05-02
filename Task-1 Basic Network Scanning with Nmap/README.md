@@ -3,6 +3,9 @@
 ## Objective
 The objective of this task is to perform a basic network scan using Nmap to identify reachable hosts, detect open ports, and understand exposed network services. This exercise teaches fundamental network reconnaissance techniques used in cybersecurity assessments.
 
+## Video Demonstration
+Watch the complete walkthrough: [Task-1 Video](https://drive.google.com/file/d/19VGN9xcRXe6KhbhAWQBFnMyRbV7uOR4v/view?usp=sharing)
+
 ## Next Steps
 - Review the scan results and identify whether ports are exposed or filtered.
 - Determine whether the network firewall is working as expected.
